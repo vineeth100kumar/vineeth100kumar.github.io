@@ -13,29 +13,55 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            background-color: #020617; /* slate-950 */
+            /* Subtle grid background for the DIY/maker feel */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 2rem 2rem;
+            overflow-x: hidden;
         }
+
+        /* Add a glowing effect from the top */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background: radial-gradient(circle, rgba(22, 78, 99, 0.4), transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
         .section-title {
-            color: #5eead4; /* teal-300 */
+            color: #67e8f9; /* cyan-300 */
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
             margin-bottom: 1.5rem;
         }
-        .card {
-            background-color: #1e293b; /* slate-800 */
-            border: 1px solid #334155; /* slate-700 */
-            transition: all 0.3s ease;
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6); /* slate-900 with alpha */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with alpha */
+            transition: all 0.3s ease-in-out;
+            border-radius: 1rem; /* more rounded corners */
         }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #5eead4; /* teal-300 */
+
+        .glass-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: rgba(103, 232, 249, 0.7); /* cyan-300 with alpha */
+            box-shadow: 0 0 20px rgba(103, 232, 249, 0.2);
         }
+        
         .category-title {
             font-size: 1.125rem;
             font-weight: 600;
-            color: #cbd5e1; /* slate-300 */
-            margin-top: 1.5rem;
+            color: #e2e8f0; /* slate-200 */
+            margin-top: 2rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #334155; /* slate-700 */
@@ -49,20 +75,20 @@
             
             <!-- Left Column / Sidebar -->
             <aside class="lg:col-span-1 lg:sticky top-8 h-fit">
-                <div class="p-8 bg-slate-800 rounded-2xl shadow-2xl">
+                <div class="p-8 glass-card">
                     <div class="text-center">
-                        <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-400" src="https://placehold.co/128x128/1e293b/5eead4?text=VK" alt="Vineeth Kumar">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-cyan-400" src="https://placehold.co/128x128/0f172a/67e8f9?text=VK" alt="Vineeth Kumar">
                         <h1 class="text-3xl font-bold text-white">VINEETH KUMAR</h1>
-                        <p class="text-lg text-teal-300 mt-1">Electronics & Communication Engineer</p>
+                        <p class="text-lg text-cyan-300 mt-1">Electronics & Communication Engineer</p>
                     </div>
                     
                     <div class="mt-8 border-t border-slate-700 pt-6">
                         <ul class="space-y-4 text-lg">
-                            <li><a href="mailto:vineeth100kumar@gmail.com" class="flex items-center hover:text-teal-300 transition-colors"><i class="fas fa-envelope w-6 mr-3 text-teal-400"></i>vineeth100kumar@gmail.com</a></li>
-                            <li><a href="tel:9880209753" class="flex items-center hover:text-teal-300 transition-colors"><i class="fas fa-phone w-6 mr-3 text-teal-400"></i>9880209753</a></li>
-                            <li><span class="flex items-center"><i class="fas fa-map-marker-alt w-6 mr-3 text-teal-400"></i>Bengaluru</span></li>
-                            <li><a href="https://www.linkedin.com/in/vineeth-kumar-a6aa7a27b" target="_blank" class="flex items-center hover:text-teal-300 transition-colors"><i class="fab fa-linkedin w-6 mr-3 text-teal-400"></i>LinkedIn</a></li>
-                            <li><a href="https://github.com/vineeth100kumar" target="_blank" class="flex items-center hover:text-teal-300 transition-colors"><i class="fab fa-github w-6 mr-3 text-teal-400"></i>GitHub</a></li>
+                            <li><a href="mailto:vineeth100kumar@gmail.com" class="flex items-center hover:text-cyan-300 transition-colors"><i class="fas fa-envelope w-6 mr-3 text-cyan-400"></i>vineeth100kumar@gmail.com</a></li>
+                            <li><a href="tel:9880209753" class="flex items-center hover:text-cyan-300 transition-colors"><i class="fas fa-phone w-6 mr-3 text-cyan-400"></i>9880209753</a></li>
+                            <li><span class="flex items-center"><i class="fas fa-map-marker-alt w-6 mr-3 text-cyan-400"></i>Bengaluru</span></li>
+                            <li><a href="https://www.linkedin.com/in/vineeth-kumar-a6aa7a27b" target="_blank" class="flex items-center hover:text-cyan-300 transition-colors"><i class="fab fa-linkedin w-6 mr-3 text-cyan-400"></i>LinkedIn</a></li>
+                            <li><a href="https://github.com/vineeth100kumar" target="_blank" class="flex items-center hover:text-cyan-300 transition-colors"><i class="fab fa-github w-6 mr-3 text-cyan-400"></i>GitHub</a></li>
                         </ul>
                     </div>
                 </div>
@@ -70,18 +96,29 @@
 
             <!-- Right Column / Main Content -->
             <main class="lg:col-span-2">
+                <!-- Navigation -->
+                 <nav class="flex items-center space-x-6 mb-12 glass-card p-4">
+                    <a href="#profile" class="font-semibold text-gray-300 hover:text-cyan-300 transition-colors">About</a>
+                    <a href="#experience" class="font-semibold text-gray-300 hover:text-cyan-300 transition-colors">Experience</a>
+                    <a href="#projects" class="font-semibold text-gray-300 hover:text-cyan-300 transition-colors">Projects</a>
+                    <a href="#education" class="font-semibold text-gray-300 hover:text-cyan-300 transition-colors">Education</a>
+                    <a href="#skills" class="font-semibold text-gray-300 hover:text-cyan-300 transition-colors">Skills</a>
+                </nav>
+
                 <!-- Profile Section -->
                 <section id="profile" class="mb-12">
                     <h2 class="section-title">About Me</h2>
-                    <p class="text-xl leading-relaxed bg-slate-800 p-6 rounded-lg">
-                        Electronics and Communication Engineering student with hands-on experience in embedded systems, IoT, and rapid prototyping. Skilled in leading real-time hardware projects involving autonomous navigation and environmental monitoring. Also experienced in technical leadership and digital outreach through E-CELL RVCE.
-                    </p>
+                    <div class="glass-card p-6">
+                        <p class="text-xl leading-relaxed">
+                            Electronics and Communication Engineering student with hands-on experience in embedded systems, IoT, and rapid prototyping. Skilled in leading real-time hardware projects involving autonomous navigation and environmental monitoring. Also experienced in technical leadership and digital outreach through E-CELL RVCE.
+                        </p>
+                    </div>
                 </section>
                 
                 <!-- Experience Section -->
                 <section id="experience" class="mb-12">
                     <h2 class="section-title">Experience</h2>
-                    <div class="card p-6 rounded-lg">
+                    <div class="glass-card p-6">
                         <div class="flex justify-between items-baseline">
                              <h3 class="font-bold text-xl text-white">Technical ADAS Manager & Scrum Master (Intern)</h3>
                              <p class="text-sm text-gray-400">Feb 2025 – Apr 2025</p>
@@ -100,15 +137,15 @@
                     
                     <h3 class="category-title">IoT & Embedded Systems</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="card p-6 rounded-lg">
+                        <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white mb-2">Smart Power Bank</h3>
                             <p>Built a power bank using a Raspberry Pi Pico W, INA219, and 3x18650 batteries. Features a dual-mode OLED+LCD for displaying time, weather, and battery info in a custom chassis.</p>
                         </div>
-                        <div class="card p-6 rounded-lg">
+                        <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white mb-2">IoT Desk Clock & Task Manager</h3>
                             <p>Designed a custom PCB with ESP32-C3, ILI9341 LCD, and NeoPixels. Developed firmware in Embedded C for a portable, Li-ion powered task manager with alerts.</p>
                         </div>
-                         <div class="card p-6 rounded-lg">
+                         <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white mb-2">Custom Control Board</h3>
                             <p>Engineered a 9-key custom PCB using Raspberry Pi Pico to trigger keyboard shortcuts, programming HID functionality for seamless USB control.</p>
                         </div>
@@ -116,11 +153,11 @@
 
                     <h3 class="category-title">Robotics & Automation</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                         <div class="card p-6 rounded-lg">
+                         <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white mb-2">Autonomous Environmental Rover</h3>
                             <p>Developed "AETHER", a solar-powered rover using a Raspberry Pi Pico with LiDAR, BMP280, GPS, and rain sensors. Features a web-based control dashboard.</p>
                         </div>
-                        <div class="card p-6 rounded-lg">
+                        <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white mb-2">Autonomous Pick-and-Place Rover</h3>
                             <p>Designed a rover with a 3D-printed 3-axis arm (100-200g lift capacity) using a Raspberry Pi Zero 2W for autonomous navigation and object manipulation.</p>
                         </div>
@@ -128,7 +165,7 @@
 
                     <h3 class="category-title">VLSI Design</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="card p-6 rounded-lg">
+                        <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white mb-2">Low Power SRAM Optimization</h3>
                             <p>Achieved 66% leakage power reduction in a 6T SRAM cell using transistor stacking & MTCMOS in Cadence Virtuoso. Analyzed delay, SNM, and PVT robustness with Spectre.</p>
                         </div>
@@ -139,14 +176,14 @@
                 <section id="education" class="mb-12">
                      <h2 class="section-title">Education</h2>
                      <div class="space-y-6">
-                         <div class="card p-6 rounded-lg">
+                         <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white">R.V. College of Engineering, Bengaluru</h3>
                             <p class="font-medium text-gray-400">BE in Electronics and Communication Engineering</p>
                             <p class="text-gray-500 mb-3">Oct 2022 – Present | CGPA: 6.69</p>
                             <h4 class="font-semibold text-gray-200">Key Coursework:</h4>
                             <p class="text-sm text-gray-400">VLSI Design, Digital Circuits, HDL, Control Systems, Embedded Systems, Analog Micro Circuits</p>
                         </div>
-                        <div class="card p-6 rounded-lg">
+                        <div class="glass-card p-6">
                             <h3 class="font-bold text-xl text-white">Deeksha Vedantu, Bengaluru</h3>
                             <p class="font-medium text-gray-400">State Board - HSC | 82%</p>
                         </div>
@@ -156,7 +193,7 @@
                 <!-- Technologies Section -->
                 <section id="skills">
                     <h2 class="section-title">Technologies & Skills</h2>
-                    <div class="card p-6 rounded-lg">
+                    <div class="glass-card p-6">
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
                             <div>
                                 <h4 class="font-bold text-white mb-2">Languages</h4>
