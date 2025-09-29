@@ -12,147 +12,178 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
         .section-title {
-            border-bottom: 2px solid #3b82f6; /* blue-500 */
-            padding-bottom: 0.5rem;
+            color: #5eead4; /* teal-300 */
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        }
+        .card {
+            background-color: #1e293b; /* slate-800 */
+            border: 1px solid #334155; /* slate-700 */
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #5eead4; /* teal-300 */
+        }
+        .category-title {
+            font-size: 1.125rem;
             font-weight: 600;
-            color: #1e3a8a; /* blue-900 */
+            color: #cbd5e1; /* slate-300 */
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #334155; /* slate-700 */
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-slate-900 text-gray-300">
 
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-6xl">
-        <div class="bg-white rounded-2xl shadow-2xl p-8 sm:p-12">
+    <div class="container mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             
-            <!-- Header Section -->
-            <header class="text-center mb-12">
-                <h1 class="text-5xl md:text-6xl font-bold text-blue-900">VINEETH KUMAR</h1>
-                <p class="text-xl md:text-2xl text-gray-600 mt-2">Electronics and Communication Engineering Student</p>
-                <div class="mt-6 flex justify-center items-center flex-wrap gap-x-6 gap-y-3">
-                    <a href="mailto:vineeth100kumar@gmail.com" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        <i class="fas fa-envelope mr-2"></i> vineeth100kumar@gmail.com
-                    </a>
-                    <a href="tel:9880209753" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        <i class="fas fa-phone mr-2"></i> 9880209753
-                    </a>
-                     <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        <i class="fas fa-map-marker-alt mr-2"></i> Bengaluru
-                    </a>
-                    <a href="https://www.linkedin.com/in/vineeth-kumar-a6aa7a27b" target="_blank" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/vineeth100kumar" target="_blank" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        <i class="fab fa-github mr-2"></i> GitHub
-                    </a>
-                </div>
-            </header>
-
-            <!-- Profile Section -->
-            <section class="mb-10">
-                <h2 class="section-title">Profile</h2>
-                <p class="text-lg leading-relaxed">
-                    Electronics and Communication Engineering student with hands-on experience in embedded systems, IoT, and sensor integration. Skilled in working with microcontrollers (Raspberry Pi, Arduino), communication protocols (UART, I2C, SPI), and rapid prototyping using SOLIDWORKS, 3D printing, and laser cutting. Led multiple real-time hardware projects involving autonomous navigation, environmental monitoring, and smart power systems. Also experienced in technical leadership and digital outreach through E-CELL RVCE.
-                </p>
-            </section>
-
-            <!-- Education Section -->
-            <section class="mb-10">
-                <h2 class="section-title">Education</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <h3 class="font-bold text-xl text-blue-800">R.V. College of Engineering, Bengaluru</h3>
-                        <p class="font-medium text-gray-700">BE in Electronics and Communication Engineering</p>
-                        <p class="text-gray-500">Oct 2022 – Present</p>
-                        <p class="text-gray-600 mt-2">CGPA: 6.69 [6th Semester]</p>
+            <!-- Left Column / Sidebar -->
+            <aside class="lg:col-span-1 lg:sticky top-8 h-fit">
+                <div class="p-8 bg-slate-800 rounded-2xl shadow-2xl">
+                    <div class="text-center">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-teal-400" src="https://placehold.co/128x128/1e293b/5eead4?text=VK" alt="Vineeth Kumar">
+                        <h1 class="text-3xl font-bold text-white">VINEETH KUMAR</h1>
+                        <p class="text-lg text-teal-300 mt-1">Electronics & Communication Engineer</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <h3 class="font-bold text-xl text-blue-800">Deeksha Vedantu, Bengaluru</h3>
-                        <p class="font-medium text-gray-700">State Board - HSC</p>
-                        <p class="text-gray-500">2020 – 2022</p>
-                        <p class="text-gray-600 mt-2">HSC: 82%</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                        <h3 class="font-bold text-xl text-blue-800">Bishop Cotton Boys' School, Bengaluru</h3>
-                        <p class="font-medium text-gray-700">ICSE - SSC</p>
-                        <p class="text-gray-500">2008 – 2020</p>
-                        <p class="text-gray-600 mt-2">SSC: 85%</p>
+                    
+                    <div class="mt-8 border-t border-slate-700 pt-6">
+                        <ul class="space-y-4 text-lg">
+                            <li><a href="mailto:vineeth100kumar@gmail.com" class="flex items-center hover:text-teal-300 transition-colors"><i class="fas fa-envelope w-6 mr-3 text-teal-400"></i>vineeth100kumar@gmail.com</a></li>
+                            <li><a href="tel:9880209753" class="flex items-center hover:text-teal-300 transition-colors"><i class="fas fa-phone w-6 mr-3 text-teal-400"></i>9880209753</a></li>
+                            <li><span class="flex items-center"><i class="fas fa-map-marker-alt w-6 mr-3 text-teal-400"></i>Bengaluru</span></li>
+                            <li><a href="https://www.linkedin.com/in/vineeth-kumar-a6aa7a27b" target="_blank" class="flex items-center hover:text-teal-300 transition-colors"><i class="fab fa-linkedin w-6 mr-3 text-teal-400"></i>LinkedIn</a></li>
+                            <li><a href="https://github.com/vineeth100kumar" target="_blank" class="flex items-center hover:text-teal-300 transition-colors"><i class="fab fa-github w-6 mr-3 text-teal-400"></i>GitHub</a></li>
+                        </ul>
                     </div>
                 </div>
-            </section>
+            </aside>
 
-            <!-- Experience Section -->
-            <section class="mb-10">
-                <h2 class="section-title">Experience</h2>
-                <div>
-                    <h3 class="font-bold text-xl text-blue-800">Technical ADAS Manager & Scrum Master (Intern)</h3>
-                    <p class="font-medium text-gray-700">daats Infratech Pvt. Ltd., Bangalore</p>
-                    <p class="text-gray-500 mb-2">Feb 2025 – Apr 2025</p>
-                    <ul class="list-disc list-inside text-lg space-y-1">
-                        <li>Assisted in managing Advanced Driver Assistance Systems (ADAS) projects and coordinated tasks as a Scrum Master, ensuring smooth sprint execution.</li>
-                        <li>Gained exposure to technical project management, agile workflows, and cross-functional collaboration, while demonstrating diligence and problem-solving skills.</li>
-                    </ul>
-                </div>
-            </section>
+            <!-- Right Column / Main Content -->
+            <main class="lg:col-span-2">
+                <!-- Profile Section -->
+                <section id="profile" class="mb-12">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="text-xl leading-relaxed bg-slate-800 p-6 rounded-lg">
+                        Electronics and Communication Engineering student with hands-on experience in embedded systems, IoT, and rapid prototyping. Skilled in leading real-time hardware projects involving autonomous navigation and environmental monitoring. Also experienced in technical leadership and digital outreach through E-CELL RVCE.
+                    </p>
+                </section>
+                
+                <!-- Experience Section -->
+                <section id="experience" class="mb-12">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="card p-6 rounded-lg">
+                        <div class="flex justify-between items-baseline">
+                             <h3 class="font-bold text-xl text-white">Technical ADAS Manager & Scrum Master (Intern)</h3>
+                             <p class="text-sm text-gray-400">Feb 2025 – Apr 2025</p>
+                        </div>
+                        <p class="font-medium text-gray-400 mb-3">daats Infratech Pvt. Ltd., Bangalore</p>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li>Assisted in managing Advanced Driver Assistance Systems (ADAS) projects and coordinated tasks as a Scrum Master, ensuring smooth sprint execution.</li>
+                            <li>Gained exposure to technical project management, agile workflows, and cross-functional collaboration.</li>
+                        </ul>
+                    </div>
+                </section>
 
-            <!-- Projects Section -->
-            <section class="mb-10">
-                <h2 class="section-title">Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                        <h3 class="font-bold text-xl text-blue-800">Low Power SRAM Optimization</h3>
-                        <p class="mt-2">Implemented and simulated a 6T SRAM cell (Cadence Virtuoso, gpdk45) with transistor stacking + MTCMOS, achieving 66% leakage power reduction and analyzed performance using Spectre.</p>
+                <!-- Projects Section -->
+                <section id="projects" class="mb-12">
+                    <h2 class="section-title">Projects</h2>
+                    
+                    <h3 class="category-title">IoT & Embedded Systems</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white mb-2">Smart Power Bank</h3>
+                            <p>Built a power bank using a Raspberry Pi Pico W, INA219, and 3x18650 batteries. Features a dual-mode OLED+LCD for displaying time, weather, and battery info in a custom chassis.</p>
+                        </div>
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white mb-2">IoT Desk Clock & Task Manager</h3>
+                            <p>Designed a custom PCB with ESP32-C3, ILI9341 LCD, and NeoPixels. Developed firmware in Embedded C for a portable, Li-ion powered task manager with alerts.</p>
+                        </div>
+                         <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white mb-2">Custom Control Board</h3>
+                            <p>Engineered a 9-key custom PCB using Raspberry Pi Pico to trigger keyboard shortcuts, programming HID functionality for seamless USB control.</p>
+                        </div>
                     </div>
-                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                        <h3 class="font-bold text-xl text-blue-800">Smart Power Bank with Dual Display</h3>
-                        <p class="mt-2">Built a smart power bank using Raspberry Pi Pico W and INA219. Integrated an OLED + LCD dual display system for Photo Frame & Clock modes, showing time, weather, and battery info.</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                        <h3 class="font-bold text-xl text-blue-800">AETHER Autonomous Environmental Rover</h3>
-                        <p class="mt-2">Designed and built an autonomous rover using Raspberry Pi Pico with LiDAR, GPS, and various sensors for environmental monitoring, featuring solar charging and a web-based control dashboard.</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                        <h3 class="font-bold text-xl text-blue-800">IoT-Enabled Desk Clock & Task Manager</h3>
-                        <p class="mt-2">Designed a custom PCB with ESP32-C3, LCD, and NeoPixels. Developed firmware in Embedded C to create a battery-powered portable task manager with alerts.</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                        <h3 class="font-bold text-xl text-blue-800">Autonomous Pick-and-Place Rover</h3>
-                        <p class="mt-2">Designed a mobile rover with a fully 3D-printed 3-axis robotic arm. Used Raspberry Pi Zero 2W to autonomously navigate and move objects in an indoor space.</p>
-                    </div>
-                     <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                        <h3 class="font-bold text-xl text-blue-800">Custom Control Board</h3>
-                        <p class="mt-2">Designed a 9-key custom PCB using Raspberry Pi Pico to trigger keyboard shortcuts. Programmed HID functionality for seamless USB-based laptop control.</p>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Technologies Section -->
-            <section>
-                <h2 class="section-title">Technologies & Skills</h2>
-                <div class="flex flex-wrap gap-4">
-                    <div class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-medium">Python</div>
-                    <div class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-medium">C/C++</div>
-                    <div class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-medium">Embedded C</div>
-                    <div class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-medium">Micro-Python</div>
-                    <div class="bg-gray-200 text-gray-800 px-4 py-2 rounded-full font-medium">HTML/CSS</div>
-                    <div class="bg-blue-200 text-blue-800 px-4 py-2 rounded-full font-medium">Raspberry Pi</div>
-                    <div class="bg-blue-200 text-blue-800 px-4 py-2 rounded-full font-medium">ESP32</div>
-                    <div class="bg-green-200 text-green-800 px-4 py-2 rounded-full font-medium">UART</div>
-                    <div class="bg-green-200 text-green-800 px-4 py-2 rounded-full font-medium">I2C</div>
-                    <div class="bg-green-200 text-green-800 px-4 py-2 rounded-full font-medium">SPI</div>
-                    <div class="bg-green-200 text-green-800 px-4 py-2 rounded-full font-medium">USB HID</div>
-                    <div class="bg-yellow-200 text-yellow-800 px-4 py-2 rounded-full font-medium">VS Code</div>
-                    <div class="bg-yellow-200 text-yellow-800 px-4 py-2 rounded-full font-medium">GitHub</div>
-                    <div class="bg-yellow-200 text-yellow-800 px-4 py-2 rounded-full font-medium">Arduino IDE</div>
-                    <div class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-medium">EasyEDA</div>
-                    <div class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-medium">KiCad</div>
-                    <div class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-medium">SolidWorks</div>
-                </div>
-            </section>
+                    <h3 class="category-title">Robotics & Automation</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                         <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white mb-2">Autonomous Environmental Rover</h3>
+                            <p>Developed "AETHER", a solar-powered rover using a Raspberry Pi Pico with LiDAR, BMP280, GPS, and rain sensors. Features a web-based control dashboard.</p>
+                        </div>
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white mb-2">Autonomous Pick-and-Place Rover</h3>
+                            <p>Designed a rover with a 3D-printed 3-axis arm (100-200g lift capacity) using a Raspberry Pi Zero 2W for autonomous navigation and object manipulation.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="category-title">VLSI Design</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white mb-2">Low Power SRAM Optimization</h3>
+                            <p>Achieved 66% leakage power reduction in a 6T SRAM cell using transistor stacking & MTCMOS in Cadence Virtuoso. Analyzed delay, SNM, and PVT robustness with Spectre.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Education Section -->
+                <section id="education" class="mb-12">
+                     <h2 class="section-title">Education</h2>
+                     <div class="space-y-6">
+                         <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white">R.V. College of Engineering, Bengaluru</h3>
+                            <p class="font-medium text-gray-400">BE in Electronics and Communication Engineering</p>
+                            <p class="text-gray-500 mb-3">Oct 2022 – Present | CGPA: 6.69</p>
+                            <h4 class="font-semibold text-gray-200">Key Coursework:</h4>
+                            <p class="text-sm text-gray-400">VLSI Design, Digital Circuits, HDL, Control Systems, Embedded Systems, Analog Micro Circuits</p>
+                        </div>
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="font-bold text-xl text-white">Deeksha Vedantu, Bengaluru</h3>
+                            <p class="font-medium text-gray-400">State Board - HSC | 82%</p>
+                        </div>
+                     </div>
+                </section>
+
+                <!-- Technologies Section -->
+                <section id="skills">
+                    <h2 class="section-title">Technologies & Skills</h2>
+                    <div class="card p-6 rounded-lg">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Languages</h4>
+                                <ul class="list-disc list-inside"><li>Python</li><li>C/C++</li><li>Embedded C</li><li>Micro-Python</li><li>HTML/CSS</li></ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Microcontrollers</h4>
+                                <ul class="list-disc list-inside"><li>Raspberry Pi (4, Zero 2W, Pico)</li><li>ESP32s</li></ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Protocols</h4>
+                                <ul class="list-disc list-inside"><li>UART, I2C, SPI</li><li>USB HID, CSI</li></ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Software</h4>
+                                <ul class="list-disc list-inside"><li>VS Code, Thonny</li><li>GitHub</li><li>Arduino IDE</li></ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-2">Design Tools</h4>
+                                <ul class="list-disc list-inside"><li>EasyEDA, KiCad</li><li>SolidWorks</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
 </body>
 </html>
+
